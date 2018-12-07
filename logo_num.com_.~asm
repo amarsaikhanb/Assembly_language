@@ -1,0 +1,174 @@
+
+
+org 100h
+
+w equ 50
+h equ 50
+
+mov ah, 0
+mov al, 13h
+int 10h
+
+
+
+
+;dood line
+mov cx, 100+w  ;
+mov dx, 20+h
+mov al, 1
+u2: mov ah, 0ch
+int 10h
+
+dec cx
+cmp cx, 100
+jae u2
+
+;zuun1 line
+mov cx, 100  ;
+mov dx, 20+h
+mov al, 1
+u3: mov ah, 0ch
+int 10h
+
+dec dx
+cmp dx, 50
+jae u3
+
+;zuun1 line holboh
+mov cx, 105  ;
+mov dx, 5+h
+mov al, 1
+u4: mov ah, 0ch
+int 10h
+dec cx
+dec dx
+cmp cx, 100
+jae u4
+
+;zuun2 line
+mov cx, 105  ;
+mov dx, 20+h
+mov al, 1
+u5: mov ah, 0ch
+int 10h
+
+dec dx
+cmp dx, 45
+jae u5
+
+
+;zuun2 line holboh
+mov cx, 110  ;
+mov dx, 0+h
+mov al, 1
+u6: mov ah, 0ch
+int 10h
+dec cx
+dec dx
+cmp cx, 105
+jae u6
+
+;zuun3 line
+mov cx, 110  ;
+mov dx, 20+h
+mov al, 1
+u7: mov ah, 0ch
+int 10h
+
+dec dx
+cmp dx, 40
+jae u7
+
+
+;zuun3 line holboh
+mov cx, 125  ;
+mov dx, 45
+mov al, 1
+u8: mov ah, 0ch
+int 10h
+dec cx
+dec cx
+dec dx
+cmp cx, 110
+jae u8
+
+
+;baruun1 line
+mov cx, 100+w  ;
+mov dx, 20+h
+mov al, 1
+b1: mov ah, 0ch
+int 10h
+
+dec dx
+cmp dx, 50
+jae b1
+
+;baruun1 line holboh
+mov cx, 100+w  ;
+mov dx, h
+mov al, 1
+b2: mov ah, 0ch
+int 10h
+dec cx
+inc dx
+cmp cx, 95+w
+jae b2
+
+
+;baruun2 line
+mov cx, 95+w  ;
+mov dx, 20+h
+mov al, 1
+b3: mov ah, 0ch
+int 10h
+
+dec dx
+cmp dx, 45
+jae b3
+
+
+;baruun2 line holboh
+mov cx, 95+w  ;
+mov dx, 45
+mov al, 1
+b4: mov ah, 0ch
+int 10h
+dec cx
+inc dx
+cmp cx, 90+w
+jae b4
+
+;baruun3 line
+mov cx, 90+w  ;
+mov dx, 20+h
+mov al, 1
+b5: mov ah, 0ch
+int 10h
+
+dec dx
+cmp dx, 40
+jae b5
+
+;baruun2 line holboh
+mov cx, 90+w  ;
+mov dx, 38
+mov al, 1
+b6: mov ah, 0ch
+int 10h
+dec cx
+dec cx
+inc dx
+cmp cx, 75+w
+jae b6
+
+ret
+
+
+
+
+
+
+
+
+; [SOURCE]: C:\Users\Baagii23\Desktop\logo_num.asm

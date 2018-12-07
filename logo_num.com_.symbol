@@ -1,0 +1,21 @@
+< THE SYMBOL TABLE >  logo_num.com_  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+U2                       	0010E     	-1        	LABEL     	(NOSEG)   
+U3                       	00120     	-1        	LABEL     	(NOSEG)   
+U4                       	00132     	-1        	LABEL     	(NOSEG)   
+U5                       	00145     	-1        	LABEL     	(NOSEG)   
+U6                       	00157     	-1        	LABEL     	(NOSEG)   
+U7                       	0016A     	-1        	LABEL     	(NOSEG)   
+U8                       	0017C     	-1        	LABEL     	(NOSEG)   
+B1                       	00190     	-1        	LABEL     	(NOSEG)   
+B2                       	001A2     	-1        	LABEL     	(NOSEG)   
+B3                       	001B6     	-1        	LABEL     	(NOSEG)   
+B4                       	001C8     	-1        	LABEL     	(NOSEG)   
+B5                       	001DC     	-1        	LABEL     	(NOSEG)   
+B6                       	001EE     	-1        	LABEL     	(NOSEG)   
+===================================================================================================
+[ 4/17/2018  --  8:24:49 PM ] 
+< END >
+ 

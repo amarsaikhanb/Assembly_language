@@ -1,0 +1,46 @@
+< THE SYMBOL TABLE >  lab11.com_  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+VAR                      	00102     	2         	VAR       	(NOSEG)   
+VAR1                     	00104     	2         	VAR       	(NOSEG)   
+VAR2                     	00106     	2         	VAR       	(NOSEG)   
+VAR3                     	00108     	2         	VAR       	(NOSEG)   
+MYARRAY                  	0010A     	1         	VAR       	(NOSEG)   
+EE                       	00114     	-1        	LABEL     	(NOSEG)   
+DAVTALT                  	0011F     	-1        	LABEL     	(NOSEG)   
+DAVTALT1                 	0012E     	-1        	LABEL     	(NOSEG)   
+DAVTALT2                 	0015C     	-1        	LABEL     	(NOSEG)   
+DAVTALT3                 	0016B     	-1        	LABEL     	(NOSEG)   
+DAVTALT4                 	00199     	-1        	LABEL     	(NOSEG)   
+DAVTALT5                 	001A8     	-1        	LABEL     	(NOSEG)   
+START                    	001C5     	-1        	LABEL     	(NOSEG)   
+GO                       	001D1     	-1        	LABEL     	(NOSEG)   
+CHECKX                   	001DD     	-1        	LABEL     	(NOSEG)   
+LOW                      	001E5     	-1        	LABEL     	(NOSEG)   
+CONVERT1                 	001EC     	-1        	LABEL     	(NOSEG)   
+LABEL                    	001FB     	-1        	LABEL     	(NOSEG)   
+LABEL2                   	00203     	-1        	LABEL     	(NOSEG)   
+EXIT                     	00205     	-1        	LABEL     	(NOSEG)   
+D                        	00219     	-1        	LABEL     	(NOSEG)   
+BAGA                     	00221     	-1        	LABEL     	(NOSEG)   
+CONVERT2                 	00229     	-1        	LABEL     	(NOSEG)   
+H                        	00261     	-1        	LABEL     	(NOSEG)   
+BAGA1                    	0026A     	-1        	LABEL     	(NOSEG)   
+CONVERT3                 	00273     	-1        	LABEL     	(NOSEG)   
+LABEL1                   	00285     	-1        	LABEL     	(NOSEG)   
+EXIT1                    	00287     	-1        	LABEL     	(NOSEG)   
+LABEL11                  	00291     	-1        	LABEL     	(NOSEG)   
+EXIT5                    	00293     	-1        	LABEL     	(NOSEG)   
+LABEL3                   	0029D     	-1        	LABEL     	(NOSEG)   
+EXIT2                    	0029F     	-1        	LABEL     	(NOSEG)   
+LABEL4                   	002A9     	-1        	LABEL     	(NOSEG)   
+EXIT3                    	002AB     	-1        	LABEL     	(NOSEG)   
+LABEL5                   	002B5     	-1        	LABEL     	(NOSEG)   
+EXIT4                    	002B7     	-1        	LABEL     	(NOSEG)   
+LABEL6                   	002C1     	-1        	LABEL     	(NOSEG)   
+EXIT11                   	002C3     	-1        	LABEL     	(NOSEG)   
+===================================================================================================
+[ 5/9/2018  --  1:20:15 PM ] 
+< END >
+ 

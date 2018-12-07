@@ -1,0 +1,21 @@
+< THE SYMBOL TABLE >  file.com_  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+READ                     	00123     	-1        	LABEL     	(NOSEG)   
+LABEL1                   	00139     	-1        	LABEL     	(NOSEG)   
+LABEL2                   	00158     	-1        	LABEL     	(NOSEG)   
+EXIT                     	0016B     	-1        	LABEL     	(NOSEG)   
+FILENAME                 	00191     	1         	VAR       	(NOSEG)   
+CONVERTFILE              	0019B     	1         	VAR       	(NOSEG)   
+HANDLE                   	001AA     	2         	VAR       	(NOSEG)   
+HANDLE1                  	001AC     	2         	VAR       	(NOSEG)   
+BUFFER                   	001AE     	1         	VAR       	(NOSEG)   
+BUFFER1                  	001AF     	1         	VAR       	(NOSEG)   
+VAR                      	001B0     	2         	VAR       	(NOSEG)   
+ERR                      	001B2     	-1        	LABEL     	(NOSEG)   
+K                        	001B2     	-1        	LABEL     	(NOSEG)   
+===================================================================================================
+[ 5/17/2018  --  3:10:41 PM ] 
+< END >
+ 

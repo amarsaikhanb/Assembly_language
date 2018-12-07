@@ -1,0 +1,301 @@
+
+org 100h
+jmp ee
+var dw ?
+var1 dw 50
+var2 dw 50
+var3 dw ?
+myArray db 10 dup("?")
+ee:
+
+
+
+mov al, 13h
+mov ah, 0
+int 10h
+mov al, 0001b
+
+mov cx, 20
+
+davtalt:
+mov var3, cx
+mov cx, 50
+mov di, var1
+mov si, var2
+davtalt1:
+mov var, cx
+mov cx, si
+mov dx, di
+mov ah, 0Ch
+int 10h
+INC si
+mov cx,var
+LOOP davtalt1
+mov cx, var3
+INC var1
+LOOP davtalt
+
+mov cx, 20
+mov var1,50
+mov var2, 120
+mov al, 1100b
+
+davtalt2:
+mov var3, cx
+mov cx, 50
+mov di, var1
+mov si, var2
+davtalt3:
+mov var, cx
+mov cx, si
+mov dx, di
+mov ah, 0Ch
+int 10h
+INC si
+mov cx,var
+LOOP davtalt3
+mov cx, var3
+INC var1
+LOOP davtalt2
+
+mov cx, 20
+mov var1,50
+mov var2, 190
+mov al, 0111b
+
+davtalt4:
+mov var3, cx
+mov cx, 50
+mov di, var1
+mov si, var2
+davtalt5:
+mov var, cx
+mov cx, si
+mov dx, di
+mov ah, 0Ch
+int 10h
+INC si
+mov cx,var
+LOOP davtalt5
+mov cx, var3
+INC var1
+LOOP davtalt4
+
+
+start:
+mov ax, 03
+int 33h
+cmp bx,1
+je go
+jmp start
+
+go:
+cmp dx, 70
+
+jge start
+cmp dx, 50
+
+jle start
+
+jmp checkX
+
+checkX:
+cmp cx, 200
+jle low
+jmp d
+low:
+cmp cx, 100
+jge convert1
+jmp start
+convert1:
+mov ah ,1
+int 21h
+mov bl,al
+
+mov ah,2
+mov dl,2Dh
+int 21h
+
+MOV CX, 8
+label:
+SHL bl,1
+JC  label2
+mov dl,30h
+JMP exit
+label2:
+mov dl,31h
+exit:
+mov ah,2
+int 21h
+LOOP label
+mov ah,2
+mov dl,0Dh
+int 21h
+mov ah,2
+mov dl,0Ah
+int 21h
+jmp start
+d:
+cmp cx, 340
+jle baga
+jmp h
+baga:
+cmp cx, 240
+jge convert2
+jmp start
+convert2:
+mov ah ,1
+int 21h
+
+aam
+
+mov cl,al
+
+mov al,ah
+aam
+mov dl,ah
+mov dh,al
+
+
+add dl,30h
+
+
+mov ah,2
+int 21h
+
+mov dl,dh
+add dl,30h
+
+mov ah,2
+int 21h
+
+
+mov dl,cl
+add dl,30h
+mov ah,2
+int 21h
+mov ah,2
+mov dl,0Dh
+int 21h
+mov ah,2
+mov dl,0Ah
+int 21h
+jmp start
+h:
+cmp cx, 480
+jle baga1
+jmp start
+baga1:
+cmp cx, 380
+
+jge convert3
+jmp start
+convert3:
+mov ah,1
+int 21h
+
+mov ah, 0h
+mov bl, 10h
+div bl
+
+mov bh, 000Ah
+cmp ah,bh
+je label1
+jmp exit1
+label1:
+mov ah, 0011h
+exit1:
+
+
+mov bh, 0h;
+
+mov bh, 000Bh
+cmp ah,bh
+je label11
+jmp exit5
+label11:
+mov ah, 0012h
+exit5:
+
+
+mov bh, 0h;
+
+mov bh, 000Ch
+cmp ah,bh
+je label3
+jmp exit2
+label3:
+mov ah, 0013h
+exit2:
+
+mov bh, 0h;
+
+mov bh, 000Dh
+cmp ah,bh
+je label4
+jmp exit3
+label4:
+mov ah, 0014h
+exit3:
+
+mov bh, 0h;
+
+mov bh, 000Eh
+cmp ah,bh
+je label5
+jmp exit4
+label5:
+mov ah, 0015h
+exit4:
+
+
+mov bh, 0h;
+
+mov bh, 000Fh
+cmp ah,bh
+je label6
+jmp exit11
+label6:
+mov ah, 0016h
+exit11:
+
+
+
+
+
+add ah, 30h
+add al, 30h
+
+
+
+mov dh,ah
+mov dl,al
+
+mov ah,2
+int 21h
+
+
+mov dl,dh
+mov ah,2
+int 21h
+mov ah,2
+mov dl,0Dh
+int 21h
+mov ah,2
+mov dl,0Ah
+int 21h
+jmp start
+
+RET
+
+
+
+
+
+
+
+
+
+
+
+; [SOURCE]: C:\Users\Baagii23\Desktop\2018 Spring Semester\lab11.asm

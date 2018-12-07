@@ -1,0 +1,316 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+lab11.com_ -- emu8086 assembler version: 4.08  
+ 
+[ 5/9/2018  --  1:20:15 PM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       
+[   2]        :                                       org 100h
+[   3]    0100: EB 12                                 jmp ee
+[   4]    0102: 00 00                                 var dw ?
+[   5]    0104: 32 00                                 var1 dw 50
+[   6]    0106: 32 00                                 var2 dw 50
+[   7]    0108: 00 00                                 var3 dw ?
+[   8]    010A: 3F 3F 3F 3F 3F 3F 3F 3F 3F 3F         myArray db 10 dup("?")
+[   9]    0114:                                       ee:
+[  10]        :                                       
+[  11]        :                                       
+[  12]        :                                       
+[  13]    0114: B0 13                                 mov al, 13h
+[  14]    0116: B4 00                                 mov ah, 0
+[  15]    0118: CD 10                                 int 10h
+[  16]    011A: B0 01                                 mov al, 0001b
+[  17]        :                                       
+[  18]    011C: B9 14 00                              mov cx, 20
+[  19]        :                                       
+[  20]    011F:                                       davtalt:
+[  21]    011F: 89 0E 08 01                           mov var3, cx
+[  22]    0123: B9 32 00                              mov cx, 50
+[  23]    0126: 8B 3E 04 01                           mov di, var1
+[  24]    012A: 8B 36 06 01                           mov si, var2
+[  25]    012E:                                       davtalt1:
+[  26]    012E: 89 0E 02 01                           mov var, cx
+[  27]    0132: 8B CE                                 mov cx, si
+[  28]    0134: 8B D7                                 mov dx, di
+[  29]    0136: B4 0C                                 mov ah, 0Ch
+[  30]    0138: CD 10                                 int 10h
+[  31]    013A: 46                                    INC si
+[  32]    013B: 8B 0E 02 01                           mov cx,var
+[  33]    013F: E2 ED                                 LOOP davtalt1
+[  34]    0141: 8B 0E 08 01                           mov cx, var3
+[  35]    0145: FF 06 04 01                           INC var1
+[  36]    0149: E2 D4                                 LOOP davtalt
+[  37]        :                                       
+[  38]    014B: B9 14 00                              mov cx, 20
+[  39]    014E: C7 06 04 01 32 00                     mov var1,50
+[  40]    0154: C7 06 06 01 78 00                     mov var2, 120
+[  41]    015A: B0 0C                                 mov al, 1100b
+[  42]        :                                       
+[  43]    015C:                                       davtalt2:
+[  44]    015C: 89 0E 08 01                           mov var3, cx
+[  45]    0160: B9 32 00                              mov cx, 50
+[  46]    0163: 8B 3E 04 01                           mov di, var1
+[  47]    0167: 8B 36 06 01                           mov si, var2
+[  48]    016B:                                       davtalt3:
+[  49]    016B: 89 0E 02 01                           mov var, cx
+[  50]    016F: 8B CE                                 mov cx, si
+[  51]    0171: 8B D7                                 mov dx, di
+[  52]    0173: B4 0C                                 mov ah, 0Ch
+[  53]    0175: CD 10                                 int 10h
+[  54]    0177: 46                                    INC si
+[  55]    0178: 8B 0E 02 01                           mov cx,var
+[  56]    017C: E2 ED                                 LOOP davtalt3
+[  57]    017E: 8B 0E 08 01                           mov cx, var3
+[  58]    0182: FF 06 04 01                           INC var1
+[  59]    0186: E2 D4                                 LOOP davtalt2
+[  60]        :                                       
+[  61]    0188: B9 14 00                              mov cx, 20
+[  62]    018B: C7 06 04 01 32 00                     mov var1,50
+[  63]    0191: C7 06 06 01 BE 00                     mov var2, 190
+[  64]    0197: B0 07                                 mov al, 0111b
+[  65]        :                                       
+[  66]    0199:                                       davtalt4:
+[  67]    0199: 89 0E 08 01                           mov var3, cx
+[  68]    019D: B9 32 00                              mov cx, 50
+[  69]    01A0: 8B 3E 04 01                           mov di, var1
+[  70]    01A4: 8B 36 06 01                           mov si, var2
+[  71]    01A8:                                       davtalt5:
+[  72]    01A8: 89 0E 02 01                           mov var, cx
+[  73]    01AC: 8B CE                                 mov cx, si
+[  74]    01AE: 8B D7                                 mov dx, di
+[  75]    01B0: B4 0C                                 mov ah, 0Ch
+[  76]    01B2: CD 10                                 int 10h
+[  77]    01B4: 46                                    INC si
+[  78]    01B5: 8B 0E 02 01                           mov cx,var
+[  79]    01B9: E2 ED                                 LOOP davtalt5
+[  80]    01BB: 8B 0E 08 01                           mov cx, var3
+[  81]    01BF: FF 06 04 01                           INC var1
+[  82]    01C3: E2 D4                                 LOOP davtalt4
+[  83]        :                                       
+[  84]        :                                       
+[  85]    01C5:                                       start:
+[  86]    01C5: B8 03 00                              mov ax, 03
+[  87]    01C8: CD 33                                 int 33h
+[  88]    01CA: 83 FB 01                              cmp bx,1
+[  89]    01CD: 74 02                                 je go
+[  90]    01CF: EB F4                                 jmp start
+[  91]        :                                       
+[  92]    01D1:                                       go:
+[  93]    01D1: 83 FA 46                              cmp dx, 70
+[  94]        :                                       
+[  95]    01D4: 7D EF                                 jge start
+[  96]    01D6: 83 FA 32                              cmp dx, 50
+[  97]        :                                       
+[  98]    01D9: 7E EA                                 jle start
+[  99]        :                                       
+[ 100]    01DB: EB 00                                 jmp checkX
+[ 101]        :                                       
+[ 102]    01DD:                                       checkX:
+[ 103]    01DD: 81 F9 C8 00                           cmp cx, 200
+[ 104]    01E1: 7E 02                                 jle low
+[ 105]    01E3: EB 34                                 jmp d
+[ 106]    01E5:                                       low:
+[ 107]    01E5: 83 F9 64                              cmp cx, 100
+[ 108]    01E8: 7D 02                                 jge convert1
+[ 109]    01EA: EB D9                                 jmp start
+[ 110]    01EC:                                       convert1:
+[ 111]    01EC: B4 01                                 mov ah ,1
+[ 112]    01EE: CD 21                                 int 21h
+[ 113]    01F0: 8A D8                                 mov bl,al
+[ 114]        :                                       
+[ 115]    01F2: B4 02                                 mov ah,2
+[ 116]    01F4: B2 2D                                 mov dl,2Dh
+[ 117]    01F6: CD 21                                 int 21h
+[ 118]        :                                       
+[ 119]    01F8: B9 08 00                              MOV CX, 8
+[ 120]    01FB:                                       label:
+[ 121]    01FB: D0 E3                                 SHL bl,1
+[ 122]    01FD: 72 04                                 JC  label2
+[ 123]    01FF: B2 30                                 mov dl,30h
+[ 124]    0201: EB 02                                 JMP exit
+[ 125]    0203:                                       label2:
+[ 126]    0203: B2 31                                 mov dl,31h
+[ 127]    0205:                                       exit:
+[ 128]    0205: B4 02                                 mov ah,2
+[ 129]    0207: CD 21                                 int 21h
+[ 130]    0209: E2 F0                                 LOOP label
+[ 131]    020B: B4 02                                 mov ah,2
+[ 132]    020D: B2 0D                                 mov dl,0Dh
+[ 133]    020F: CD 21                                 int 21h
+[ 134]    0211: B4 02                                 mov ah,2
+[ 135]    0213: B2 0A                                 mov dl,0Ah
+[ 136]    0215: CD 21                                 int 21h
+[ 137]    0217: EB AC                                 jmp start
+[ 138]    0219:                                       d:
+[ 139]    0219: 81 F9 54 01                           cmp cx, 340
+[ 140]    021D: 7E 02                                 jle baga
+[ 141]    021F: EB 40                                 jmp h
+[ 142]    0221:                                       baga:
+[ 143]    0221: 81 F9 F0 00                           cmp cx, 240
+[ 144]    0225: 7D 02                                 jge convert2
+[ 145]    0227: EB 9C                                 jmp start
+[ 146]    0229:                                       convert2:
+[ 147]    0229: B4 01                                 mov ah ,1
+[ 148]    022B: CD 21                                 int 21h
+[ 149]        :                                       
+[ 150]    022D: D4 0A                                 aam
+[ 151]        :                                       
+[ 152]    022F: 8A C8                                 mov cl,al
+[ 153]        :                                       
+[ 154]    0231: 8A C4                                 mov al,ah
+[ 155]    0233: D4 0A                                 aam
+[ 156]    0235: 8A D4                                 mov dl,ah
+[ 157]    0237: 8A F0                                 mov dh,al
+[ 158]        :                                       
+[ 159]        :                                       
+[ 160]    0239: 80 C2 30                              add dl,30h
+[ 161]        :                                       
+[ 162]        :                                       
+[ 163]    023C: B4 02                                 mov ah,2
+[ 164]    023E: CD 21                                 int 21h
+[ 165]        :                                       
+[ 166]    0240: 8A D6                                 mov dl,dh
+[ 167]    0242: 80 C2 30                              add dl,30h
+[ 168]        :                                       
+[ 169]    0245: B4 02                                 mov ah,2
+[ 170]    0247: CD 21                                 int 21h
+[ 171]        :                                       
+[ 172]        :                                       
+[ 173]    0249: 8A D1                                 mov dl,cl
+[ 174]    024B: 80 C2 30                              add dl,30h
+[ 175]    024E: B4 02                                 mov ah,2
+[ 176]    0250: CD 21                                 int 21h
+[ 177]    0252: B4 02                                 mov ah,2
+[ 178]    0254: B2 0D                                 mov dl,0Dh
+[ 179]    0256: CD 21                                 int 21h
+[ 180]    0258: B4 02                                 mov ah,2
+[ 181]    025A: B2 0A                                 mov dl,0Ah
+[ 182]    025C: CD 21                                 int 21h
+[ 183]    025E: E9 64 FF                              jmp start
+[ 184]    0261:                                       h:
+[ 185]    0261: 81 F9 E0 01                           cmp cx, 480
+[ 186]    0265: 7E 03                                 jle baga1
+[ 187]    0267: E9 5B FF                              jmp start
+[ 188]    026A:                                       baga1:
+[ 189]    026A: 81 F9 7C 01                           cmp cx, 380
+[ 190]        :                                       
+[ 191]    026E: 7D 03                                 jge convert3
+[ 192]    0270: E9 52 FF                              jmp start
+[ 193]    0273:                                       convert3:
+[ 194]    0273: B4 01                                 mov ah,1
+[ 195]    0275: CD 21                                 int 21h
+[ 196]        :                                       
+[ 197]    0277: B4 00                                 mov ah, 0h
+[ 198]    0279: B3 10                                 mov bl, 10h
+[ 199]    027B: F6 F3                                 div bl
+[ 200]        :                                       
+[ 201]    027D: B7 0A                                 mov bh, 000Ah
+[ 202]    027F: 3A E7                                 cmp ah,bh
+[ 203]    0281: 74 02                                 je label1
+[ 204]    0283: EB 02                                 jmp exit1
+[ 205]    0285:                                       label1:
+[ 206]    0285: B4 11                                 mov ah, 0011h
+[ 207]    0287:                                       exit1:
+[ 208]        :                                       
+[ 209]        :                                       
+[ 210]    0287: B7 00                                 mov bh, 0h;
+[ 211]        :                                       
+[ 212]    0289: B7 0B                                 mov bh, 000Bh
+[ 213]    028B: 3A E7                                 cmp ah,bh
+[ 214]    028D: 74 02                                 je label11
+[ 215]    028F: EB 02                                 jmp exit5
+[ 216]    0291:                                       label11:
+[ 217]    0291: B4 12                                 mov ah, 0012h
+[ 218]    0293:                                       exit5:
+[ 219]        :                                       
+[ 220]        :                                       
+[ 221]    0293: B7 00                                 mov bh, 0h;
+[ 222]        :                                       
+[ 223]    0295: B7 0C                                 mov bh, 000Ch
+[ 224]    0297: 3A E7                                 cmp ah,bh
+[ 225]    0299: 74 02                                 je label3
+[ 226]    029B: EB 02                                 jmp exit2
+[ 227]    029D:                                       label3:
+[ 228]    029D: B4 13                                 mov ah, 0013h
+[ 229]    029F:                                       exit2:
+[ 230]        :                                       
+[ 231]    029F: B7 00                                 mov bh, 0h;
+[ 232]        :                                       
+[ 233]    02A1: B7 0D                                 mov bh, 000Dh
+[ 234]    02A3: 3A E7                                 cmp ah,bh
+[ 235]    02A5: 74 02                                 je label4
+[ 236]    02A7: EB 02                                 jmp exit3
+[ 237]    02A9:                                       label4:
+[ 238]    02A9: B4 14                                 mov ah, 0014h
+[ 239]    02AB:                                       exit3:
+[ 240]        :                                       
+[ 241]    02AB: B7 00                                 mov bh, 0h;
+[ 242]        :                                       
+[ 243]    02AD: B7 0E                                 mov bh, 000Eh
+[ 244]    02AF: 3A E7                                 cmp ah,bh
+[ 245]    02B1: 74 02                                 je label5
+[ 246]    02B3: EB 02                                 jmp exit4
+[ 247]    02B5:                                       label5:
+[ 248]    02B5: B4 15                                 mov ah, 0015h
+[ 249]    02B7:                                       exit4:
+[ 250]        :                                       
+[ 251]        :                                       
+[ 252]    02B7: B7 00                                 mov bh, 0h;
+[ 253]        :                                       
+[ 254]    02B9: B7 0F                                 mov bh, 000Fh
+[ 255]    02BB: 3A E7                                 cmp ah,bh
+[ 256]    02BD: 74 02                                 je label6
+[ 257]    02BF: EB 02                                 jmp exit11
+[ 258]    02C1:                                       label6:
+[ 259]    02C1: B4 16                                 mov ah, 0016h
+[ 260]    02C3:                                       exit11:
+[ 261]        :                                       
+[ 262]        :                                       
+[ 263]        :                                       
+[ 264]        :                                       
+[ 265]        :                                       
+[ 266]    02C3: 80 C4 30                              add ah, 30h
+[ 267]    02C6: 04 30                                 add al, 30h
+[ 268]        :                                       
+[ 269]        :                                       
+[ 270]        :                                       
+[ 271]    02C8: 8A F4                                 mov dh,ah
+[ 272]    02CA: 8A D0                                 mov dl,al
+[ 273]        :                                       
+[ 274]    02CC: B4 02                                 mov ah,2
+[ 275]    02CE: CD 21                                 int 21h
+[ 276]        :                                       
+[ 277]        :                                       
+[ 278]    02D0: 8A D6                                 mov dl,dh
+[ 279]    02D2: B4 02                                 mov ah,2
+[ 280]    02D4: CD 21                                 int 21h
+[ 281]    02D6: B4 02                                 mov ah,2
+[ 282]    02D8: B2 0D                                 mov dl,0Dh
+[ 283]    02DA: CD 21                                 int 21h
+[ 284]    02DC: B4 02                                 mov ah,2
+[ 285]    02DE: B2 0A                                 mov dl,0Ah
+[ 286]    02E0: CD 21                                 int 21h
+[ 287]    02E2: E9 E0 FE                              jmp start
+[ 288]        :                                       
+[ 289]    02E5: C3                                    RET
+[ 290]        :                                       
+[ 291]        :                                       
+[ 292]        :                                       
+[ 293]        :                                       
+[ 294]        :                                       
+[ 295]        :                                       
+[ 296]        :                                       
+[ 297]        :                                       
+[ 298]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================

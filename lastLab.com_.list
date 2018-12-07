@@ -1,0 +1,104 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+lastLab.com_ -- emu8086 assembler version: 4.08  
+ 
+[ 5/9/2018  --  1:25:00 PM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       org 100h
+[   2]    0100: B0 00                                 	mov al, 0     ; file-iig neej bna
+[   3]    0102: BA 91 01                              	mov dx, offset filename
+[   4]    0105: B4 3D                                 	mov ah, 3dh
+[   5]    0107: CD 21                                 	int 21h
+[   6]    0109: 73 03 E9 A5 00                        	jc err
+[   7]    010E: A3 AB 01                              	mov handle, ax
+[   8]        :                                       	
+[   9]    0111: B9 00 00                              	mov cx,0
+[  10]    0114: BA 9E 01                              	mov dx, offset convertfile ; shineer file uusgej bna
+[  11]    0117: B4 3C                                 	mov ah, 3ch
+[  12]    0119: CD 21                                 	int 21h
+[  13]    011B: 73 03 E9 93 00                        	jc err
+[  14]    0120: A3 AD 01                              	mov handle1, ax
+[  15]        :                                       	
+[  16]    0123:                                       	read:
+[  17]    0123: 8B 1E AB 01                           mov bx, handle  ; file aas unshij bna
+[  18]    0127: B9 01 00                              	mov cx,1
+[  19]    012A: BA AF 01                              	mov dx, offset buffer
+[  20]    012D: B4 3F                                 	mov ah, 3Fh
+[  21]    012F: CD 21                                 	int 21h
+[  22]        :                                       	
+[  23]    0131: 3D 00 00                              	cmp ax,0 ; buh ogogdliig unshij duussan
+[  24]    0134: 74 7D                                 	    je k
+[  25]    0136: B9 08 00                              MOV CX, 8
+[  26]    0139:                                       label1:
+[  27]    0139: 89 0E B1 01                           mov var, cx
+[  28]    013D: D0 26 AF 01                           SHL buffer,1
+[  29]    0141: 72 15                                 JC  label2
+[  30]    0143: C6 06 B0 01 30                        mov buffer1, 30h
+[  31]    0148: 8B 1E AD 01                           mov bx, handle1  ;file-d bichij bna
+[  32]    014C: B9 01 00                              	mov cx,1
+[  33]    014F: BA B0 01                              	mov dx, offset buffer1
+[  34]    0152: B4 40                                 	mov ah, 40h
+[  35]    0154: CD 21                                 	int 21h
+[  36]    0156: EB 13                                 JMP exit
+[  37]    0158:                                       label2:
+[  38]    0158: C6 06 B0 01 31                        mov buffer1, 31h
+[  39]    015D: 8B 1E AD 01                           mov bx, handle1  ;file-d bichij bna
+[  40]    0161: B9 01 00                              	mov cx,1
+[  41]    0164: BA B0 01                              	mov dx, offset buffer1
+[  42]    0167: B4 40                                 	mov ah, 40h
+[  43]    0169: CD 21                                 	int 21h
+[  44]    016B:                                       exit:
+[  45]    016B: 8B 0E B1 01                           mov cx, var
+[  46]    016F: E2 C8                                 LOOP label1
+[  47]    0171: 8B 1E AD 01                           mov bx, handle1  ;file-d bichij bna
+[  48]    0175: B9 01 00                              mov cx,1
+[  49]    0178: BA 0D 00                              mov dx, 0dh
+[  50]    017B: B4 40                                 mov ah, 40h
+[  51]    017D: CD 21                                 int 21h
+[  52]    017F: 8B 1E AD 01                           mov bx, handle1  ;file-d bichij bna
+[  53]    0183: B9 01 00                              mov cx,1
+[  54]    0186: BA 0A 00                              mov dx, 0ah
+[  55]    0189: B4 40                                 mov ah, 40h
+[  56]    018B: CD 21                                 int 21h
+[  57]        :                                       
+[  58]    018D: EB 94                                 	jmp read
+[  59]    018F: EB 22                                 	jmp k
+[  60]    0191: 6F 72 69 67 69 6E 61 6C 2E 74 78 74   	filename db "original.txt", 0
+                00                                  
+[  61]    019E: 63 6F 70 79 66 69 6C 65 2E 74 78 74   	convertfile db "copyfile.txt", 0
+                00                                  
+[  62]    01AB: 00 00                                 	handle dw ?
+[  63]    01AD: 00 00                                 	handle1 dw ?
+[  64]    01AF: 00                                    	buffer db ?
+[  65]    01B0: 00                                    	buffer1 db ?
+[  66]    01B1: 00 00                                 	var dw ?
+[  67]    01B3:                                       	err:
+[  68]        :                                       	
+[  69]    01B3:                                       	k:
+[  70]    01B3: 8B 1E AB 01                           	    mov bx, handle
+[  71]    01B7: B4 3E                                 	    mov ah, 3eh
+[  72]    01B9: CD 21                                 	    int 21h
+[  73]    01BB: 8B 1E AD 01                           	    mov bx, handle1
+[  74]    01BF: B4 3E                                 	    mov ah, 3eh
+[  75]    01C1: CD 21                                 	    int 21h
+[  76]        :                                       	
+[  77]    01C3: C3                                    ret
+[  78]        :                                       
+[  79]        :                                       
+[  80]        :                                       
+[  81]        :                                       
+[  82]        :                                       
+[  83]        :                                       
+[  84]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================

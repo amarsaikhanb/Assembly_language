@@ -1,0 +1,38 @@
+org 100h
+mov ah,1h
+int 21h
+
+mov bl,al
+
+mov cl, 2
+
+here:
+
+mov ax, bx
+mov bh,2
+div bh
+
+cmp ah, 0
+jg prime
+
+inc cl
+cmp cl, bl
+jl here:
+
+mov ah,2h
+mov dl, 'n'
+int 21h
+jmp end
+
+
+prime:
+mov ah, 2h
+mov dl, 'p'
+int 21h
+jmp end
+
+end:
+
+
+ret
+

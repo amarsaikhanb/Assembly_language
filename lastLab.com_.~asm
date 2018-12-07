@@ -1,0 +1,87 @@
+org 100h
+mov al, 0     ; file-iig neej bna
+mov dx, offset filename
+mov ah, 3dh
+int 21h
+jc err
+mov handle, ax
+
+mov cx,0
+mov dx, offset convertfile ; shineer file uusgej bna
+mov ah, 3ch
+int 21h
+jc err
+mov handle1, ax
+
+read:
+mov bx, handle  ; file aas unshij bna
+mov cx,1
+mov dx, offset buffer
+mov ah, 3Fh
+int 21h
+
+cmp ax,0 ; buh ogogdliig unshij duussan
+je k
+MOV CX, 8
+label1:
+mov var, cx
+SHL buffer,1
+JC  label2
+mov buffer1, 30h
+mov bx, handle1  ;file-d bichij bna
+mov cx,1
+mov dx, offset buffer1
+mov ah, 40h
+int 21h
+JMP exit
+label2:
+mov buffer1, 31h
+mov bx, handle1  ;file-d bichij bna
+mov cx,1
+mov dx, offset buffer1
+mov ah, 40h
+int 21h
+exit:
+mov cx, var
+LOOP label1
+mov bx, handle1  ;file-d bichij bna
+mov cx,1
+mov dx, 0dh
+mov ah, 40h
+int 21h
+mov bx, handle1  ;file-d bichij bna
+mov cx,1
+mov dx, 0ah
+mov ah, 40h
+int 21h
+
+jmp read
+jmp k
+filename db "original.txt", 0
+convertfile db "copyfile.txt", 0
+handle dw ?
+handle1 dw ?
+buffer db ?
+buffer1 db ?
+var dw ?
+err:
+
+k:
+mov bx, handle
+mov ah, 3eh
+int 21h
+mov bx, handle1
+mov ah, 3eh
+int 21h
+
+ret
+
+
+
+
+
+
+
+
+
+; [SOURCE]: C:\Users\Baagii23\Desktop\2018 Spring Semester\lastLab.asm

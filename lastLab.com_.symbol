@@ -1,0 +1,21 @@
+< THE SYMBOL TABLE >  lastLab.com_  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+READ                     	00123     	-1        	LABEL     	(NOSEG)   
+LABEL1                   	00139     	-1        	LABEL     	(NOSEG)   
+LABEL2                   	00158     	-1        	LABEL     	(NOSEG)   
+EXIT                     	0016B     	-1        	LABEL     	(NOSEG)   
+FILENAME                 	00191     	1         	VAR       	(NOSEG)   
+CONVERTFILE              	0019E     	1         	VAR       	(NOSEG)   
+HANDLE                   	001AB     	2         	VAR       	(NOSEG)   
+HANDLE1                  	001AD     	2         	VAR       	(NOSEG)   
+BUFFER                   	001AF     	1         	VAR       	(NOSEG)   
+BUFFER1                  	001B0     	1         	VAR       	(NOSEG)   
+VAR                      	001B1     	2         	VAR       	(NOSEG)   
+ERR                      	001B3     	-1        	LABEL     	(NOSEG)   
+K                        	001B3     	-1        	LABEL     	(NOSEG)   
+===================================================================================================
+[ 5/9/2018  --  1:25:00 PM ] 
+< END >
+ 
